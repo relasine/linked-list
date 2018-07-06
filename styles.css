@@ -1,0 +1,86 @@
+body {
+
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+}
+.left-input {
+  background-color: #455A64;
+  float: left;
+}
+
+.right-stored {
+  background-color: #CFD8DC;
+  float: left;
+}
+
+h1 {
+  color: #FFF;
+}
+
+img {
+  height: .8em;
+}
+
+input {
+  display: block;
+}
+
+/*come back later fins the right grey*/
+::placeholder {
+  color: grey;
+}
+
+button {
+  background-color: #FFC107;
+  color: #FFF;
+  display: block;
+}
+
+button:hover {
+  background-color: #FFD773;
+  color: #FFF;
+}
+
+article {
+  background-color: #FFF;
+  border: solid #607D8B;
+  color: #455A64;
+  /*margin: 1.6875em, 1.6875em, .5em, 1.6875em;*/
+}
+
+/*figure out how to style later*/
+hr {
+border-color: solid #CFD8DC;
+
+}
+
+.clearfix: after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.btn-wrapper {
+  height: 1.125em;
+}
+
+#read-btn {
+  margin:0;
+  font-size: .7em;
+  float: left;
+  display: inline-block;
+}
+
+#delete-btn {
+  margin:0;
+  font-size: .7em;
+  float: right;
+  display: inline-block;
+}
+
+
+
+
+
+
+
