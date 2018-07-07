@@ -8,23 +8,19 @@ body {
 
 }
 .left-input {
-      align-items: center;
-
+  display: grid;
+  align-items: center;
   background-color: #455A64;
   grid-column: 1;
   grid-row: 1/5;
-/*  float: left;
-*/  height: 100vh;
-/*  width: 50%;*/
-
+  height: 100vh;
 }
 
 .right-stored {
   background-color: #CFD8DC;
   grid-column: 2;
   grid-row: 1/5;
-/*  float: left;
-  width: 50%;*/
+
   height: 100vh;
 }
 
@@ -35,8 +31,7 @@ form {
 h1 {
   color: #FFF;
   display: block;
-  /*text-align: center;*/
-  width: 90% ;
+  text-align: center;
 }
 
 
@@ -47,7 +42,6 @@ img {
 input {
   display: block;
   margin: 1em auto;
-  /*width: 90%;*/
 }
 
 /*come back later fins the right grey*/
