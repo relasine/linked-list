@@ -9,6 +9,7 @@ var deleteButton = document.querySelector("#delete-btn");
 // addEventListeners
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
+websiteURLInput.addEventListener("keyup", disabledButton);
 readButton.addEventListener("click", markRead);
 deleteButton.addEventListener("click", deleteArticle);
 
