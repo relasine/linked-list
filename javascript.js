@@ -19,7 +19,7 @@ function enterButton() {
 }
 
 function disabledButton() {
-  if (websiteTitleInput.length > 0 && websiteURLInput > 0) {
+  if (websiteTitleInput.length > 0 && websiteURLInput.length > 0) {
     enterButton.disabled = false;
   } else {
     enterButton.disabled = true;
