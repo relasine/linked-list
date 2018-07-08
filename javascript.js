@@ -2,86 +2,72 @@
 
 var websiteTitleInput = document.querySelector("#website-title");
 var websiteURLInput = document.querySelector("#website-url");
-var enterButton = document.querySelector("#enter-button");
-var title1 = document.querySelector("#title1");
-var title2 = document.querySelector("#title2");
-var title3 = document.querySelector("#title3");
-var title4 = document.querySelector("#title4");
-var link1 = document.querySelector("#link1");
-var link2 = document.querySelector("#link2");
-var link3 = document.querySelector("#link3");
-var link4 = document.querySelector("#link4");
-var readButton1 = document.querySelector("#read-btn1");
-var readButton2 = document.querySelector("#read-btn2");
-var readButton3 = document.querySelector("#read-btn3");
-var readButton4 = document.querySelector("#read-btn4");
-var deleteButton = document.querySelector("#delete-btn1");
-var deleteButton = document.querySelector("#delete-btn2");
-var deleteButton = document.querySelector("#delete-btn3");
-var deleteButton = document.querySelector("#delete-btn4");
+var enterButton = document.querySelector(".submit-button");
+var title = document.querySelector(".bookmark-text");
+var link = document.querySelector(".bookmark-url");
+var readButton = document.querySelector(".read-btn");
+var deleteButton = document.querySelector(".delete-btn");
+var bookmarkSection = document.querySelector(".right-stored");
+
 
 // addEventListeners
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-readButton1.addEventListener("click", markRead1);
-readButton2.addEventListener("click", markRead2);
-readButton3.addEventListener("click", markRead3);
-readButton4.addEventListener("click", markRead4);
-deleteButton1.addEventListener("click", deleteArticle1);
-deleteButton2.addEventListener("click", deleteArticle2);
-deleteButton3.addEventListener("click", deleteArticle3);
-deleteButton4.addEventListener("click", deleteArticle4);
+readButton.addEventListener("click", markRead);
+deleteButton.addEventListener("click", deleteArticle);
 
 // functions
-function enterButton() {
-  //if article1 blank, populate
-  //else if article2 blank, populate
-  //else if article3 blank, populate
-  //else if article4 blank, populate
-  //else throw full message
+function submitInput() {
+  event.preventDefault();
+  console.log("working");
+  var article = document.createElement("article");
+  bookmarkSection.appendChild(article);
+  var h2Element = document.createElement("h2");
+  h2Element.className = "bookmark-text";
+  var h2Text = document.createTextNode(websiteTitleInput.value);
+  h2Element.appendChild(h2Text);
+  article.appendChild(h2Element);
+  var hr1 = document.createElement("hr");
+  article.appendChild(hr1);
+  var webLink = document.createElement("a");
+  webLink.className = "bookmark-url";
+  webLink.href = websiteURLInput.value;
+  webLink.innerHTML = websiteURLInput.value;
+  article.appendChild(webLink);
+  var hr2 = document.createElement("hr");
+  article.appendChild(hr2);
+  var wrapperDiv = document.createElement("div");
+  wrapperDiv.className = "btn-wrapper clearfix";
+  article.appendChild(wrapperDiv);
+  var readButton = document.createElement("button");
+  readButton.className = "read-btn";
+  var readButtonText = document.createTextNode("Read");
+  readButton.appendChild(readButtonText);
+  wrapperDiv.appendChild(readButton);
+  var deleteButton = document.createElement("button");
+  deleteButton.className = "delete-btn";
+  var deleteButtonText = document.createTextNode("Delete");
+  deleteButton.appendChild(deleteButtonText);
+  wrapperDiv.appendChild(deleteButton);
 }
 
 function disabledButton() {
-  if (websiteTitleInput.length > 0 && websiteURLInput.length > 0) {
-    enterButton.disabled = false;
-  } else {
-    enterButton.disabled = true;
-  }
+  // if (websiteTitleInput.length > 0 && websiteURLInput.length > 0) {
+  //   enterButton.disabled = false;
+  // } else {
+  //   enterButton.disabled = true;
+  // }
 }
 
-function markRead1() {
-  if (readButton1.classList.contains(read) {
-    readButton1.classList.remove(read);
-  } else {
-    readButton1.classList.add(read);
-  }
+function markRead() {
+  // if (readButton.classList.contains(read)) {
+  //   readButton.classList.remove(read);
+  // } else {
+  //   readButton.classList.add(read);
+  // }
 }
 
-function markRead2() {
-  if (readButton2.classList.contains(read) {
-    readButton2.classList.remove(read);
-  } else {
-    readButton2.classList.add(read);
-  }
-}
-
-function markRead3() {
-  if (readButton3.classList.contains(read) {
-    readButton3.classList.remove(read);
-  } else {
-    readButton3.classList.add(read);
-  }
-}
-
-function markRead4() {
-  if (readButton4.classList.contains(read) {
-    readButton4.classList.remove(read);
-  } else {
-    readButton4.classList.add(read);
-  }
-}
-
-function deleteArticle1() {
+function deleteArticle() {
   // delete the article card
 }
