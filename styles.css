@@ -1,8 +1,8 @@
 
 body {
+  background-color: #CFD8DC;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
   font-family: 'Open Sans', sans-serif;
   margin: 0 auto;
 
@@ -17,9 +17,8 @@ body {
 }
 
 .right-stored {
-  background-color: #CFD8DC;
-  grid-column: 2;
-  grid-row: 1/5;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
   height: 100vh;
 }
 
@@ -30,7 +29,6 @@ form {
 
 h1 {
   color: #FFF;
-  /*display: block;*/
   font-size: 5em;
   margin: .2em 0;
   text-align: center;
@@ -70,10 +68,11 @@ input {
 }
 
 article {
+  align-self: center;
   background-color: #FFF;
   border: solid #607D8B;
   color: #455A64;
-  margin: 1em auto;
+  margin: auto;
   width: 90%;
 }
 
