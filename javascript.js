@@ -14,8 +14,7 @@ var bookmarkSection = document.querySelector(".right-stored");
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-readButton.addEventListener("click", markRead);
-deleteButton.addEventListener("click", deleteArticle);
+
 
 // functions
 function submitInput() {
@@ -50,14 +49,27 @@ function submitInput() {
   var deleteButtonText = document.createTextNode("Delete");
   deleteButton.appendChild(deleteButtonText);
   wrapperDiv.appendChild(deleteButton);
+  clearInputs();
+  readButton.addEventListener("click", markRead);
+  deleteButton.addEventListener("click", deleteArticle);
+}
+
+function clearInputs() {
+  enterButton.disabled = true;
+  websiteTitleInput.value = "";
+  websiteURLInput.value = "";
+}
+
+function enableEventListeners() {
+
 }
 
 function disabledButton() {
-  // if (websiteTitleInput.length > 0 && websiteURLInput.length > 0) {
-  //   enterButton.disabled = false;
-  // } else {
-  //   enterButton.disabled = true;
-  // }
+  if (websiteTitleInput.value.length > 0 && websiteURLInput.value.length > 0) {
+    enterButton.disabled = false;
+  } else {
+    enterButton.disabled = true;
+  }
 }
 
 function markRead() {
