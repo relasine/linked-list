@@ -33,7 +33,7 @@ function submitInput(event) {
     `<article>
       <h2 class="bookmark-text">${cardTitle}</h2>
       <hr>
-      <a class="bookmark-url" href="#">${webLink}</a>
+      <a class="bookmark-url" href="${webLink}">${webLink}</a>
       <hr>
       <div class="btn-wrapper clearfix">
         <button class="read-btn">Read</button>
