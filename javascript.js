@@ -50,14 +50,17 @@ function submitInput() {
   var deleteButtonText = document.createTextNode("Delete");
   deleteButton.appendChild(deleteButtonText);
   wrapperDiv.appendChild(deleteButton);
+  enterButton.disabled = true;
+  websiteTitleInput.value = "";
+  websiteURLInput.value = "";
 }
 
 function disabledButton() {
-  // if (websiteTitleInput.length > 0 && websiteURLInput.length > 0) {
-  //   enterButton.disabled = false;
-  // } else {
-  //   enterButton.disabled = true;
-  // }
+  if (websiteTitleInput.value.length > 0 && websiteURLInput.value.length > 0) {
+    enterButton.disabled = false;
+  } else {
+    enterButton.disabled = true;
+  }
 }
 
 function markRead() {
