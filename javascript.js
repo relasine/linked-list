@@ -14,8 +14,7 @@ var bookmarkSection = document.querySelector(".right-stored");
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-readButton.addEventListener("click", markRead);
-deleteButton.addEventListener("click", deleteArticle);
+
 
 // functions
 function submitInput() {
@@ -50,9 +49,19 @@ function submitInput() {
   var deleteButtonText = document.createTextNode("Delete");
   deleteButton.appendChild(deleteButtonText);
   wrapperDiv.appendChild(deleteButton);
+  clearInputs();
+  enableEventListeners();
+}
+
+function clearInputs() {
   enterButton.disabled = true;
   websiteTitleInput.value = "";
   websiteURLInput.value = "";
+}
+
+function enableEventListeners() {
+  readButton.addEventListener("click", markRead);
+  deleteButton.addEventListener("click", deleteArticle);
 }
 
 function disabledButton() {
