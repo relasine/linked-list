@@ -85,7 +85,7 @@ h2 {
   line-height: .4em;
 }
 
-/*p {
+/*p { No longer using <p> elements
   font-color: #455A64;
   font-size: 1.5em;
   padding: 0 4.3%;
