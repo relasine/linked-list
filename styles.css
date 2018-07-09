@@ -34,7 +34,6 @@ h1 {
   text-align: center;
 }
 
-
 img {
   height: .8em;
 }
@@ -85,12 +84,6 @@ h2 {
   line-height: .4em;
 }
 
-/*p { No longer using <p> elements
-  font-color: #455A64;
-  font-size: 1.5em;
-  padding: 0 4.3%;
-}*/
-
 a {
   font-size: 1.2em;
   color: #455A64;
@@ -117,6 +110,7 @@ margin-top: 1em;
 }
 
 .read-btn {
+  background-color: inherit;
   border: 0;
   font-family: 'Open Sans', sans-serif;
   height: 1.5em;
@@ -124,9 +118,11 @@ margin-top: 1em;
   margin-left: 1.5em;
   float: left;
   display: inline-block;
+  cursor: pointer;
 }
 
 .delete-btn {
+  background-color: inherit;
   border: 0;
   font-family: 'Open Sans', sans-serif;
   height: 1.5em;
@@ -134,10 +130,13 @@ margin-top: 1em;
   margin-right: 1.5em;
   float: right;
   display: inline-block;
+  cursor: pointer;
 }
 
 
 /*447 on mobile 583*/
 
-
+.read {
+  background-color: #F2F4F4;
+}
 

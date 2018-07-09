@@ -18,6 +18,11 @@ bookmarkSection.addEventListener("click", function(event) {
     event.target.parentNode.parentNode.remove()
   }
 });
+bookmarkSection.addEventListener("click", function(event) {
+  if(event.target.className === "read-btn") {
+    event.target.parentNode.parentNode.classList.toggle("read");
+  }
+})
 
 // functions
 function submitInput(event) {
@@ -31,14 +36,12 @@ function submitInput(event) {
       <a class="bookmark-url" href="#">${webLink}</a>
       <hr>
       <div class="btn-wrapper clearfix">
-        <button class="read-btn">Read</p>
-        <button class="delete-btn">Delete</p>
+        <button class="read-btn">Read</button>
+        <button class="delete-btn">Delete</button>
       </div>
-    </article>`
+    </article>`;
   bookmarkSection.innerHTML += card; 
   clearInputs();
-  // deleteButton.addEventListener("click", deleteArticle);
-  // readButton.addEventListener("click", markRead);
 }
 
 function clearInputs() {
@@ -55,14 +58,14 @@ function disabledButton() {
   }
 }
 
-function markRead() {
-  console.log("button works");
-  // if (readButton.classList.contains(read)) {
-  //   readButton.classList.remove(read);
-  // } else {
-  //   readButton.classList.add(read);
-  // }
-}
+// function markRead() {
+//   console.log("button works");
+//   if (event.parentNode.parentNode.classList.contains(read)) {
+//     event.parentNode.parentNode.remove(read);
+//   } else {
+//     event.parentNode.parentNode.classList.add(read);
+//   }
+// }
 
 function deleteArticle() {
   // delete the article card
