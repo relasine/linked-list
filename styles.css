@@ -67,7 +67,7 @@ input {
   color: #FFF;
 }
 
-article {
+article { 
   background-color: #FFF;
   border: solid #607D8B;
   color: #455A64;
@@ -85,11 +85,11 @@ h2 {
   line-height: .4em;
 }
 
-p {
+/*p {
   font-color: #455A64;
   font-size: 1.5em;
   padding: 0 4.3%;
-}
+}*/
 
 a {
   font-size: 1.2em;
