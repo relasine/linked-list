@@ -50,7 +50,8 @@ function submitInput() {
   deleteButton.appendChild(deleteButtonText);
   wrapperDiv.appendChild(deleteButton);
   clearInputs();
-  enableEventListeners();
+  readButton.addEventListener("click", markRead);
+  deleteButton.addEventListener("click", deleteArticle);
 }
 
 function clearInputs() {
@@ -60,8 +61,7 @@ function clearInputs() {
 }
 
 function enableEventListeners() {
-  readButton.addEventListener("click", markRead);
-  deleteButton.addEventListener("click", deleteArticle);
+
 }
 
 function disabledButton() {
