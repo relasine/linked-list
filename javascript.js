@@ -9,59 +9,42 @@ var readButton = document.querySelector(".read-btn");
 var deleteButton = document.querySelector(".delete-btn");
 var bookmarkSection = document.querySelector(".right-stored");
 
-
 // addEventListeners
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-
+bookmarkSection.addEventListener("click", function(event) {
+  if(event.target.className === "delete-btn") {
+    event.target.parentNode.parentNode.remove()
+  }
+});
 
 // functions
-function submitInput() {
+function submitInput(event) {
   event.preventDefault();
-  console.log("working");
-  var article = document.createElement("article");
-  bookmarkSection.appendChild(article);
-  var h2Element = document.createElement("h2");
-  h2Element.className = "bookmark-text";
-  var h2Text = document.createTextNode(websiteTitleInput.value);
-  h2Element.appendChild(h2Text);
-  article.appendChild(h2Element);
-  var hr1 = document.createElement("hr");
-  article.appendChild(hr1);
-  var webLink = document.createElement("a");
-  webLink.className = "bookmark-url";
-  webLink.href = websiteURLInput.value;
-  webLink.innerHTML = websiteURLInput.value;
-  article.appendChild(webLink);
-  var hr2 = document.createElement("hr");
-  article.appendChild(hr2);
-  var wrapperDiv = document.createElement("div");
-  wrapperDiv.className = "btn-wrapper clearfix";
-  article.appendChild(wrapperDiv);
-  var readButton = document.createElement("button");
-  readButton.className = "read-btn";
-  var readButtonText = document.createTextNode("Read");
-  readButton.appendChild(readButtonText);
-  wrapperDiv.appendChild(readButton);
-  var deleteButton = document.createElement("button");
-  deleteButton.className = "delete-btn";
-  var deleteButtonText = document.createTextNode("Delete");
-  deleteButton.appendChild(deleteButtonText);
-  wrapperDiv.appendChild(deleteButton);
+  var cardTitle = websiteTitleInput.value;
+  var webLink = websiteURLInput.value;
+  var card = 
+    `<article>
+      <h2 class="bookmark-text">${cardTitle}</h2>
+      <hr>
+      <a class="bookmark-url" href="#">${webLink}</a>
+      <hr>
+      <div class="btn-wrapper clearfix">
+        <button class="read-btn">Read</p>
+        <button class="delete-btn">Delete</p>
+      </div>
+    </article>`
+  bookmarkSection.innerHTML += card; 
   clearInputs();
-  readButton.addEventListener("click", markRead);
-  deleteButton.addEventListener("click", deleteArticle);
+  // deleteButton.addEventListener("click", deleteArticle);
+  // readButton.addEventListener("click", markRead);
 }
 
 function clearInputs() {
   enterButton.disabled = true;
   websiteTitleInput.value = "";
   websiteURLInput.value = "";
-}
-
-function enableEventListeners() {
-
 }
 
 function disabledButton() {
@@ -73,6 +56,7 @@ function disabledButton() {
 }
 
 function markRead() {
+  console.log("button works");
   // if (readButton.classList.contains(read)) {
   //   readButton.classList.remove(read);
   // } else {
