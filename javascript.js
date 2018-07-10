@@ -13,7 +13,6 @@ var bookmarkSection = document.querySelector(".right-stored");
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-<<<<<<< HEAD
 bookmarkSection.addEventListener("click", deleteBtnClick);
 bookmarkSection.addEventListener("click", readBtnClick);
   
@@ -30,10 +29,6 @@ if(event.target.className === "read-btn") {
     event.target.parentNode.parentNode.classList.toggle("read");
   }
 };
-=======
-bookmarkSection.addEventListener("click", clickReadButton);
-bookmarkSection.addEventListener("click", clickDeleteButton);
->>>>>>> master
 
 function submitInput(event) {
   event.preventDefault();
