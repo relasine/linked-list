@@ -13,18 +13,23 @@ var bookmarkSection = document.querySelector(".right-stored");
 enterButton.addEventListener("click", submitInput);
 websiteTitleInput.addEventListener("keyup", disabledButton);
 websiteURLInput.addEventListener("keyup", disabledButton);
-bookmarkSection.addEventListener("click", function(event) {
-  if(event.target.className === "delete-btn") {
+bookmarkSection.addEventListener("click", deleteBtnClick);
+bookmarkSection.addEventListener("click", readBtnClick);
+  
+// functions
+
+function deleteBtnClick() {
+   if(event.target.className === "delete-btn") {
     event.target.parentNode.parentNode.remove()
   }
-});
-bookmarkSection.addEventListener("click", function(event) {
-  if(event.target.className === "read-btn") {
+}
+
+function readBtnClick(){
+if(event.target.className === "read-btn") {
     event.target.parentNode.parentNode.classList.toggle("read");
   }
-})
+};
 
-// functions
 function submitInput(event) {
   event.preventDefault();
   var cardTitle = websiteTitleInput.value;

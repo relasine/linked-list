@@ -151,9 +151,15 @@ margin-top: 1em;
 
 /*447 on mobile 583*/
 
-.read {
+.read{
   background-color: #F2F4F4;
 }
+
+.bookmark-read {
+  color: #F05A28;
+}
+
+
 
 #website-url {
   margin-top: 2em;
