@@ -85,6 +85,7 @@ article {
 }
 
 h2 {
+  font-color: ;
   font-size: 2em;
   line-height: .4em;
 }
@@ -93,6 +94,11 @@ a {
   font-size: 1.2em;
   color: #455A64;
   margin-bottom: .5em;
+}
+
+a:hover {
+  text-decoration: underline #FFC107;
+  font-weight: 800;
 }
 /*figure out how to style later*/
 hr {
@@ -122,6 +128,10 @@ margin-top: 1em;
   margin-left: 1.5em;
   float: left;
   display: inline-block;
+}
+
+.read-btn:hover, .delete-btn:hover {
+  text-decoration: underline #FFC107;
 }
 
 .delete-btn {
