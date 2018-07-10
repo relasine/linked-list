@@ -1,5 +1,8 @@
 // querySelectors
 
+var bookmarkCount = 0;
+var readBookmarks = 0;
+var unreadBookmarks = 0;
 var websiteTitleInput = document.querySelector("#website-title");
 var websiteURLInput = document.querySelector("#website-url");
 var enterButton = document.querySelector(".submit-button");
@@ -8,6 +11,9 @@ var link = document.querySelector(".bookmark-url");
 var readButton = document.querySelector(".read-btn");
 var deleteButton = document.querySelector(".delete-btn");
 var bookmarkSection = document.querySelector(".right-stored");
+var totalLinksText = document.querySelector(".total-links")
+var readBookmarksText = document.querySelector(".read-bookmarks-text")
+var unreadBookmarksText = document.querySelector(".unread-bookmarks-text")
 
 // addEventListeners
 enterButton.addEventListener("click", submitInput);
@@ -19,18 +25,30 @@ bookmarkSection.addEventListener("click", readBtnClick);
 // functions
 
 function deleteBtnClick() {
-   if(event.target.className === "delete-btn") {
-    event.target.parentNode.parentNode.remove()
+   if(event.target.classList.contains("delete-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
+    bookmarkCount --;
+    readBookmarks --;
+    event.target.parentNode.parentNode.remove();
+  } else if(event.target.className === "delete-btn") {
+    bookmarkCount --;
+    unreadBookmarks --;
+    event.target.parentNode.parentNode.remove();
   }
 }
 
 function readBtnClick(){
-if(event.target.classList.contains("read-btn")) {
+if(event.target.classList.contains("read-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
     event.target.parentNode.parentNode.classList.toggle("read");
-    console.log(event.target);
     event.target.classList.toggle("bookmark-read");
-  }
-};
+    readBookmarks --;
+    unreadBookmarks ++;
+  } else if(event.target.classList.contains("read-btn")) {
+    event.target.parentNode.parentNode.classList.toggle("read");
+    event.target.classList.toggle("bookmark-read");
+    readBookmarks ++;
+    unreadBookmarks --;
+  };
+}
 
 function submitInput(event) {
   event.preventDefault();
@@ -49,6 +67,8 @@ function submitInput(event) {
     </article>`;
   bookmarkSection.innerHTML += card; 
   clearInputs();
+  bookmarkCount ++;
+  unreadBookmarks ++;
 }
 
 function clickDeleteButton() {
