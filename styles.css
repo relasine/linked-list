@@ -102,7 +102,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline #FFC107;
+  border-bottom: solid #FFC107;
   font-weight: 800;
 }
 /*figure out how to style later*/
@@ -146,7 +146,8 @@ margin-top: 1em;
   display: inline-block;
 }
 .read-btn:hover, .delete-btn:hover {
-  text-decoration: underline #FFC107;
+  border-bottom: solid #FFC107;
+  font-weight: 800;
 }
 
 /*447 on mobile 583*/
@@ -158,3 +159,5 @@ margin-top: 1em;
 #website-url {
   margin-top: 2em;
 }
+
+
