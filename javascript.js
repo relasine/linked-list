@@ -25,8 +25,10 @@ function deleteBtnClick() {
 }
 
 function readBtnClick(){
-if(event.target.className === "read-btn") {
+if(event.target.classList.contains("read-btn")) {
     event.target.parentNode.parentNode.classList.toggle("read");
+    console.log(event.target);
+    event.target.classList.toggle("bookmark-read");
   }
 };
 

@@ -138,6 +138,7 @@ margin-top: 1em;
 .read-btn, .delete-btn {
   background-color: inherit;
   border: 0;
+  color: #455A65;
   font-family: 'Open Sans', sans-serif;
   height: 1.5em;
   margin:0 1.5em;
