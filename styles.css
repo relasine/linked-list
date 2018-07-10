@@ -68,6 +68,7 @@ input {
 
 .submit-button:hover {
   background-color: #FFD773;
+  border: solid #FFD773;
   color: #FFF;
 }
 
@@ -84,16 +85,20 @@ article {
   margin-left: 4.3%;
 }
 
+a, h2, .btns {
+  color: #455A64;
+
+}
+
 h2 {
-  font-color: ;
   font-size: 2em;
   line-height: .4em;
 }
 
 a {
   font-size: 1.2em;
-  color: #455A64;
   margin-bottom: .5em;
+  text-decoration: underline #F2F4F4;
 }
 
 a:hover {
@@ -119,32 +124,30 @@ margin-top: 1em;
   margin-bottom: 1.6em;
 }
 
+.btns{
+  font-size: 2em;
+}
 .read-btn {
+  float: left;
+}
+
+.delete-btn {
+  float: right;
+}
+
+.read-btn, .delete-btn {
   background-color: inherit;
   border: 0;
   font-family: 'Open Sans', sans-serif;
   height: 1.5em;
   margin:0;
   margin-left: 1.5em;
-  float: left;
+  text-decoration: underline #F2F4F4;
   display: inline-block;
 }
-
 .read-btn:hover, .delete-btn:hover {
   text-decoration: underline #FFC107;
 }
-
-.delete-btn {
-  background-color: inherit;
-  border: 0;
-  font-family: 'Open Sans', sans-serif;
-  height: 1.5em;
-  margin:0;
-  margin-right: 1.5em;
-  float: right;
-  display: inline-block;
-}
-
 
 /*447 on mobile 583*/
 
