@@ -36,13 +36,13 @@ function submitInput(event) {
   clearInputs();
 }
 
-function clickReadButton() {
+function clickDeleteButton() {
   if(event.target.className === "delete-btn") {
     event.target.parentNode.parentNode.remove();
   }
 }
 
-function clickDeleteButton() {
+function clickReadButton() {
   if(event.target.className === "read-btn") {
     event.target.parentNode.parentNode.classList.toggle("read");
   }
