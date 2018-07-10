@@ -164,23 +164,39 @@ margin-top: 1em;
 #website-url {
   margin-top: 2em;
 }
+
 @media(max-width: 600px) {
- body {
-   grid-template-columns: 1fr;
-   grid-template-rows: repeat 2(1fr);
- }
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat 2(1fr);
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+
+  #website-url {
+    margin-top: 1em;
+  }
+
+  .submit-button {
+    margin-top: 1em;
+  }
 
  .left-input {
    display: default;
    background-color: #455A64;
    grid-row: 1;
-   height: 55vh;
+   height: 45vh;
    position: initial;
    width: 100%;
- }
+  }
 
  .right-stored {
    grid-column: 1;
    grid-row: 2;
- }
+  }
 }
+
+
