@@ -28,10 +28,14 @@ function deleteBtnClick() {
    if(event.target.classList.contains("delete-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
     bookmarkCount --;
     readBookmarks --;
+    totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
+    readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
     event.target.parentNode.parentNode.remove();
   } else if(event.target.className === "delete-btn") {
     bookmarkCount --;
     unreadBookmarks --;
+    totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
+    unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
     event.target.parentNode.parentNode.remove();
   }
 }
@@ -42,6 +46,8 @@ if(event.target.classList.contains("read-btn") && event.target.parentNode.parent
     event.target.classList.toggle("bookmark-read");
     readBookmarks --;
     unreadBookmarks ++;
+    readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
+    unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
   } else if(event.target.classList.contains("read-btn")) {
     event.target.parentNode.parentNode.classList.toggle("read");
     event.target.classList.toggle("bookmark-read");
@@ -68,7 +74,9 @@ function submitInput(event) {
   bookmarkSection.innerHTML += card; 
   clearInputs();
   bookmarkCount ++;
+  totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
   unreadBookmarks ++;
+  unreadBookmarksText.innerText = `unread bookmarks: ${bookmarkCount}`;
 }
 
 function clickDeleteButton() {
@@ -109,3 +117,4 @@ function disabledButton() {
 function deleteArticle() {
   // delete the article card
 }
+
