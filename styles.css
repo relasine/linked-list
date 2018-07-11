@@ -17,12 +17,10 @@ body {
 }
 
 .right-stored {
-  display: grid;
   grid-column: 2;
 }
 
 form {
-  align-items: center;
   width: 100%;
 }
 
@@ -47,7 +45,6 @@ input {
 
 ::placeholder {
   color: grey;
-  
 }
 
 .submit-button {
@@ -75,7 +72,7 @@ article {
   border: solid #607D8B;
   color: #455A64;
   height: 9.8em;
-  margin: .7em auto;
+  margin: 1.1em auto;
   width: 90%;
 }
 
@@ -85,7 +82,6 @@ article {
 
 a, h2, .btns {
   color: #455A64;
-
 }
 
 h2 {
@@ -103,7 +99,7 @@ a:hover {
   border-bottom: solid #FFC107;
   font-weight: 800;
 }
-/*figure out how to style later*/
+
 hr {
 border-color: solid #CFD8DC;
 width: 92%;
@@ -150,8 +146,6 @@ margin-top: 1em;
   font-weight: 800;
 }
 
-/*447 on mobile 583*/
-
 .read{
   background-color: #F2F4F4;
 }
@@ -184,10 +178,6 @@ margin-top: 1em;
   #website-url, .submit-button {
     margin-top: 1em;
   }
-
-  /*.submit-button {
-    margin-top: 1em;
-  }*/
 
  .left-input {
    display: default;
