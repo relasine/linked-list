@@ -1,4 +1,3 @@
-
 body {
   background-color: #CFD8DC;
   display: grid;
@@ -46,7 +45,6 @@ input {
   width: 90%;
 }
 
-/*come back later fins the right grey*/
 ::placeholder {
   color: grey;
   
@@ -127,6 +125,7 @@ margin-top: 1em;
 .btns{
   font-size: 2em;
 }
+
 .read-btn {
   float: left;
 }
@@ -145,6 +144,7 @@ margin-top: 1em;
   text-decoration: underline #F2F4F4;
   display: inline-block;
 }
+
 .read-btn:hover, .delete-btn:hover {
   border-bottom: solid #FFC107;
   font-weight: 800;
@@ -160,10 +160,14 @@ margin-top: 1em;
   color: #F05A28;
 }
 
-
-
 #website-url {
   margin-top: 2em;
+}
+
+.total-links, .unread-bookmarks-text, .read-bookmarks-text {
+  color: #FFF;
+  font-weight: 800;
+  text-align: center;
 }
 
 @media(max-width: 600px) {
@@ -177,13 +181,13 @@ margin-top: 1em;
     margin-top: 0;
   }
 
-  #website-url {
+  #website-url, .submit-button {
     margin-top: 1em;
   }
 
-  .submit-button {
+  /*.submit-button {
     margin-top: 1em;
-  }
+  }*/
 
  .left-input {
    display: default;
