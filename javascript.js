@@ -56,6 +56,16 @@ function submitInput(event) {
   event.preventDefault();
   var cardTitle = websiteTitleInput.value;
   var webLink = websiteURLInput.value;
+  if (websiteTitleInput.value.length > 0 && websiteURLInput.value.length > 0) {
+    publishBookmark();
+  } else {
+    alert("Please enter a title and address");
+  }
+}
+
+function publishBookmark() {
+  var cardTitle = websiteTitleInput.value;
+  var webLink = websiteURLInput.value;
   var card = 
     `<article>
       <h2 class="bookmark-text">${cardTitle}</h2>
