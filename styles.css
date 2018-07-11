@@ -1,15 +1,15 @@
 body {
   background-color: #CFD8DC;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   font-family: 'Open Sans', sans-serif;
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
 
 }
 .left-input {
-  display: grid;
   align-items: center;
   background-color: #455A64;
+  display: grid;
   grid-column: 1;
   height: 100vh;
   position: fixed;
@@ -48,8 +48,8 @@ input {
 }
 
 .submit-button {
-  border: solid #FFC107;
   background-color: #FFC107;
+  border: solid #FFC107;
   color: #FFF;
   display: block;
   font-size: 1em;
@@ -101,9 +101,9 @@ a:hover {
 }
 
 hr {
-border-color: solid #CFD8DC;
-width: 92%;
-margin-top: 1em;
+  border-color: solid #CFD8DC;
+  width: 92%;
+  margin-top: 1em;
 }
 
 .clearfix: after {
@@ -134,11 +134,11 @@ margin-top: 1em;
   background-color: inherit;
   border: 0;
   color: #455A65;
+  display: inline-block;
   font-family: 'Open Sans', sans-serif;
   height: 1.5em;
   margin:0 1.5em;
   text-decoration: underline #F2F4F4;
-  display: inline-block;
 }
 
 .read-btn:hover, .delete-btn:hover {
@@ -180,17 +180,17 @@ margin-top: 1em;
   }
 
  .left-input {
-   display: default;
-   background-color: #455A64;
-   grid-row: 1;
-   height: 45vh;
-   position: initial;
-   width: 100%;
+    background-color: #455A64;
+    display: default;
+    grid-row: 1;
+    height: 45vh;
+    position: initial;
+    width: 100%;
   }
 
  .right-stored {
-   grid-column: 1;
-   grid-row: 2;
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 
