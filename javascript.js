@@ -1,5 +1,4 @@
 // querySelectors
-
 var bookmarkCount = 0;
 var readBookmarks = 0;
 var unreadBookmarks = 0;
@@ -23,7 +22,6 @@ bookmarkSection.addEventListener("click", deleteBtnClick);
 bookmarkSection.addEventListener("click", readBtnClick);
   
 // functions
-
 function deleteBtnClick() {
    if(event.target.classList.contains("delete-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
     minusBookmark();
@@ -49,7 +47,7 @@ if(event.target.classList.contains("read-btn") && event.target.parentNode.parent
     event.target.classList.toggle("bookmark-read");
     plusRead();
     minusUnread();
-  };
+  }
 }
 
 function submitInput(event) {
@@ -68,13 +66,13 @@ function publishBookmark() {
   var webLink = websiteURLInput.value;
   var card = 
     `<article>
-      <h2 class="bookmark-text">${cardTitle}</h2>
+      <h2 class="bookmark-text" aria-label="bookmarked website title">${cardTitle}</h2>
       <hr>
-      <a class="bookmark-url" href="http://${webLink}">${webLink}</a>
+      <a class="bookmark-url" aria-label="bookmarked website address" href="http://${webLink}">${webLink} </a>
       <hr>  
       <div class="btn-wrapper clearfix">
-        <button class="read-btn">Read</button>
-        <button class="delete-btn">Delete</button>
+        <button class="read-btn" aria-label="mark bookmark read">Read</button>
+        <button class="delete-btn" aria-label="delete bookmark">Delete</button>
       </div>
     </article>`;
   bookmarkSection.innerHTML += card; 

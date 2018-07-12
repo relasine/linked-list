@@ -164,7 +164,7 @@ hr {
   text-align: center;
 }
 
-@media screen and(max-width: 600px) {
+@media (max-width: 600px) {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat 2(1fr);
@@ -201,7 +201,7 @@ hr {
   }
 }
 
-@media screen and(max-width: 350px) {
+@media (max-width: 350px) {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat 2(1fr);
