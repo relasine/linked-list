@@ -1,4 +1,4 @@
-// querySelectors
+
 var bookmarkCount = 0;
 var readBookmarks = 0;
 var unreadBookmarks = 0;
