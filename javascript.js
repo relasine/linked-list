@@ -1,5 +1,4 @@
 // querySelectors
-
 var bookmarkCount = 0;
 var readBookmarks = 0;
 var unreadBookmarks = 0;
@@ -12,8 +11,8 @@ var readButton = document.querySelector(".read-btn");
 var deleteButton = document.querySelector(".delete-btn");
 var bookmarkSection = document.querySelector(".right-stored");
 var totalLinksText = document.querySelector(".total-links")
-var readBookmarksText = document.querySelector(".read-bookmarks-text")
-var unreadBookmarksText = document.querySelector(".unread-bookmarks-text")
+var readBookmarksText = document.querySelector(".read-bookmarks-text");
+var unreadBookmarksText = document.querySelector(".unread-bookmarks-text");
 
 // addEventListeners
 enterButton.addEventListener("click", submitInput);
@@ -23,19 +22,14 @@ bookmarkSection.addEventListener("click", deleteBtnClick);
 bookmarkSection.addEventListener("click", readBtnClick);
   
 // functions
-
 function deleteBtnClick() {
    if(event.target.classList.contains("delete-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
-    bookmarkCount --;
-    readBookmarks --;
-    totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
-    readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
+    minusBookmark();
+    minusRead();
     event.target.parentNode.parentNode.remove();
   } else if(event.target.className === "delete-btn") {
-    bookmarkCount --;
-    unreadBookmarks --;
-    totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
-    unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
+    minusBookmark();
+    minusUnread();
     event.target.parentNode.parentNode.remove();
   }
 }
@@ -44,39 +38,47 @@ function readBtnClick(){
 if(event.target.classList.contains("read-btn") && event.target.parentNode.parentNode.classList.contains("read")) {
     event.target.parentNode.parentNode.classList.toggle("read");
     event.target.classList.toggle("bookmark-read");
-    readBookmarks --;
-    unreadBookmarks ++;
+    minusRead();
+    plusUnread();
     readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
     unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
   } else if(event.target.classList.contains("read-btn")) {
     event.target.parentNode.parentNode.classList.toggle("read");
     event.target.classList.toggle("bookmark-read");
-    readBookmarks ++;
-    unreadBookmarks --;
-  };
+    plusRead();
+    minusUnread();
+  }
 }
 
 function submitInput(event) {
   event.preventDefault();
   var cardTitle = websiteTitleInput.value;
   var webLink = websiteURLInput.value;
+  if (websiteTitleInput.value.length > 0 && websiteURLInput.value.length > 0) {
+    publishBookmark();
+  } else {
+    alert("Please enter a title and address");
+  }
+}
+
+function publishBookmark() {
+  var cardTitle = websiteTitleInput.value;
+  var webLink = websiteURLInput.value;
   var card = 
     `<article>
-      <h2 class="bookmark-text">${cardTitle}</h2>
+      <h2 class="bookmark-text" aria-label="bookmarked website title">${cardTitle}</h2>
       <hr>
-      <a class="bookmark-url" href="${webLink}">${webLink}</a>
-      <hr>
+      <a class="bookmark-url" aria-label="bookmarked website address" href="http://${webLink}">${webLink} </a>
+      <hr>  
       <div class="btn-wrapper clearfix">
-        <button class="read-btn">Read</button>
-        <button class="delete-btn">Delete</button>
+        <button class="read-btn" aria-label="mark bookmark read">Read</button>
+        <button class="delete-btn" aria-label="delete bookmark">Delete</button>
       </div>
     </article>`;
   bookmarkSection.innerHTML += card; 
   clearInputs();
-  bookmarkCount ++;
-  totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
-  unreadBookmarks ++;
-  unreadBookmarksText.innerText = `unread bookmarks: ${bookmarkCount}`;
+  plusBookmark();
+  plusUnread();
 }
 
 function clickDeleteButton() {
@@ -105,16 +107,33 @@ function disabledButton() {
   }
 }
 
-// function markRead() {
-//   console.log("button works");
-//   if (event.parentNode.parentNode.classList.contains(read)) {
-//     event.parentNode.parentNode.remove(read);
-//   } else {
-//     event.parentNode.parentNode.classList.add(read);
-//   }
-// }
+function plusBookmark() {
+  bookmarkCount ++;
+  totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
+}
 
-function deleteArticle() {
-  // delete the article card
+function minusBookmark() {
+  bookmarkCount --;
+  totalLinksText.innerText = `total bookmarks: ${bookmarkCount}`;
+}
+
+function plusRead() {
+  readBookmarks ++;
+  readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
+}
+
+function plusUnread() {
+  unreadBookmarks ++;
+  unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
+}
+
+function minusRead() {
+  readBookmarks --;
+  readBookmarksText.innerText = `read bookmarks: ${readBookmarks}`;
+}
+
+function minusUnread() {
+  unreadBookmarks --;
+  unreadBookmarksText.innerText = `unread bookmarks: ${unreadBookmarks}`;
 }
 

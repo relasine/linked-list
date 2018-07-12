@@ -4,20 +4,20 @@
   <title>LinkList</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <section class="left-input">
     <div class="form-wrapper">
-      <h1>Linked <img src="images/linked-list-logo.svg"> List</h1>
+      <h1 aria-label="Title">Linked <img src="images/linked-list-logo.svg"> List</h1>
       <form label="website-input">
-      <input type="text" aria-label="website-title" id="website-title" name="Website-Title" placeholder="Website Title">
-      <input type="text" aria-label="website-url" id="website-url" name="Website-url" placeholder="Website URL">
-      <button class="submit-button" aria-label="enter-button">Enter</button>
+      <input type="text" aria-label="website title entry field" id="website-title" name="Website-Title" placeholder="Website Title">
+      <input type="url" aria-label="website url entry field" id="website-url" name="Website-url" placeholder="Website URL">
+      <button class="submit-button" aria-label="enter-button" title="Please enter a title and website address" disabled>Enter</button>
     </form>
-      <p class="total-links">total bookmarks: 0</p>
-      <p class="unread-bookmarks-text">unread bookmarks: 0</p>
-      <p class-="read-bookmarks-text">read bookmarks: 0</p>
-
+      <p class="total-links" aria-label="total bookmark count">total bookmarks: 0</p>
+      <p class="unread-bookmarks-text" aria-label="unread bookmark count">unread bookmarks: 0</p>
+      <p class="read-bookmarks-text" aria-label="read bookmark count">read bookmarks: 0</p>
   </div>
   </section>
   <section class="right-stored">
